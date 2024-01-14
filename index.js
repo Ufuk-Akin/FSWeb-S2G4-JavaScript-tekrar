@@ -50,9 +50,11 @@ function KareninAlani(kenaruzunlugu) {
 	4. Hesaplanan çemberin çevresi döndürülecektir.
 */
 
-function CemberinCevresi(/* kodlar buraya */) {
-  /* kodlar buraya */
+function CemberinCevresi(yaricap) {
+  return 2*Math.PI*yaricap;
 }
+
+console.log(CemberinCevresi(5));
 
 /* (Oto test yok) Yukarıdaki CemberinCevresi fonksiyonunu yarıçap = 5 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
 
@@ -64,9 +66,10 @@ function CemberinCevresi(/* kodlar buraya */) {
 	4. Hesaplanan çemberin alanı döndürülecektir.
 */
 
-function CemberinAlani(/* kodlar buraya */) {
-  /* kodlar buraya */
+function CemberinAlani(yaricap,pi = Math.PI) {
+  return Math.PI * Math.pow(yaricap,2);
 }
+console.log(CemberinAlani(15));
 
 /* (Oto test yok) Yukarıdaki CemberinAlani fonksiyonunu yarıçap = 15 vererek aşağıda çalıştırıp, sonucu konsolda gözlemleyin (console.log)  */
 
@@ -99,28 +102,61 @@ let ucetambolunenler,
 
 // 3a çözümü
 
-/* kodlar buraya */
+  for (let i =0 ; i<sayilar.length ; i++ ) {
+    enkucuk = 0;
+    enbuyuk = 0;
+    if (arr[i] < enkucuk) {
+      enkucuk = arr[i];
+    }
+    
+    if(arr[i] >enbuyuk){
+      enbuyuk = arr[i];
+    }
+  }
+
 
 // 3b çözümü:
 
-/* kodlar buraya */
+ucetambolunenler = [];
+
+sayilar.forEach((sayi)=>{
+  if(sayi % 3 === 0){
+    ucetambolunenler.push(sayi)
+  }
+})
 
 // 3c çözümü:
 
-/* kodlar buraya */
+ucebolunenlerintoplami = 
+ucetambolunenler.reduce((toplam,sayi) => toplam+sayi , 0);
+
 
 // 3d çözümü
 
-/* kodlar buraya */
+besyuzdenkucuksayilar = sayilar.filter((sayi) => sayi<500 );
 
 // 3e çözümü
 
-/* kodlar buraya */
+siralisayilar = [...sayilar];
+siralisayilar.sort((a,b) => a-b);
 
 // 3f çözümü
 
-/* kodlar buraya */
+tekraredentumsayilar = {};
+tekraredensayilar = {}
 
+  for(let sayi of sayilar){
+    if(tekraredentumsayilar[sayi] === undefined) {
+      tekraredentumsayilar[sayi] = 1
+    } else {
+      tekraredentumsayilar[sayi] ++
+    }
+  for(let sayi in tekraredentumsayilar) {
+    if(tekraredentumsayilar[sayi] > 1 ){
+      tekraredensayilar[sayi] = tekraredentumsayilar [sayi]
+    }
+  }
+  }
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 
 function sa() {
